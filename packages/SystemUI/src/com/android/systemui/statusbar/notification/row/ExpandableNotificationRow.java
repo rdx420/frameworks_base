@@ -47,6 +47,7 @@ import android.os.Bundle;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.Trace;
+import android.provider.Settings;
 import android.service.notification.StatusBarNotification;
 import android.util.ArraySet;
 import android.util.AttributeSet;
@@ -2259,7 +2260,12 @@ public class ExpandableNotificationRow extends ActivatableNotificationView
     }
 
     public boolean isUserExpanded() {
-        return mUserExpanded;
+        if (Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.FORCE_EXPANDED_NOTIFICATIONS, 0) != 1) {
+            return mUserExpanded;
+        } else {
+            return true;
+        }
     }
 
     /**
