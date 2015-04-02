@@ -6071,6 +6071,13 @@ public final class Settings {
          */
         @Readable
         public static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
+        
+        /**
+         * Whether to answer the call with the volume keys, the value is boolean.
+         * 0 = 0ff, 1 = on
+         */
+        @SuppressLint("NoSettingsProvider")
+        public static final String VOLUME_ANSWER_CALL = "volume_answer_call";
 
         /**
          * Keys we no longer back up under the current schema, but want to continue to
@@ -6220,6 +6227,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BATTERY_LEVEL_COLORS);
             PRIVATE_SETTINGS.add(AMBIENT_NOTIFICATION_LIGHT);
             PRIVATE_SETTINGS.add(AMBIENT_NOTIFICATION_LIGHT_AUTOMATIC);
+            PRIVATE_SETTINGS.add(VOLUME_ANSWER_CALL);
         }
 
         /**
