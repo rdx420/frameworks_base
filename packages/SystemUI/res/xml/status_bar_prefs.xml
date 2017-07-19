@@ -73,7 +73,13 @@
         android:key="volume"
         android:title="@*android:string/volume_unknown" />
 
-    <!--Wifi-->
+    <!--VoLTE-->
+    <com.android.systemui.tuner.TunerSwitch
+        android:icon="@drawable/ic_statusbar_volte"
+        android:key="ims"
+        android:title="@string/status_bar_ims" />
+
+    <!--WiFi-->
     <com.android.systemui.tuner.StatusBarSwitch
         android:icon="@drawable/ic_statusbar_wifi"
         android:key="wifi"
