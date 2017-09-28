@@ -432,6 +432,8 @@ public interface CentralSurfaces extends Dumpable, ActivityStarter, LifecycleOwn
 
     void onCameraHintStarted();
 
+    void onCustomHintStarted();
+
     void onVoiceAssistHintStarted();
 
     void onPhoneHintStarted();
