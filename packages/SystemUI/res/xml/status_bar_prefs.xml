@@ -126,4 +126,11 @@
         android:icon="@drawable/ic_statusbar_alarm"
         android:key="alarm_clock"
         android:title="@string/status_bar_alarm" />
+
+    <!-- clock -->
+    <com.android.systemui.tuner.StatusBarSwitch
+        android:icon="@drawable/ic_statusbar_clock2"
+        android:key="clock"
+        android:title="@string/clock" />
+
 </PreferenceScreen>
