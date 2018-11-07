@@ -33,6 +33,7 @@ import android.content.Context;
 import android.content.ContentResolver;
 import android.database.ContentObserver;
 import android.os.Handler;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.os.UserHandle;
@@ -139,6 +140,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
     private boolean mIsClockBlacklisted;
 
     private boolean mShowSBClockBg = true;
+
+    private View mBatteryBars[] = new View[2];
+
     private final Handler mHandler = new Handler();
 
     private class SettingsObserver extends ContentObserver {
@@ -270,6 +274,8 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         mStatusBarIconController.addIconGroup(mDarkIconManager);
         mSystemIconArea = mStatusBar.findViewById(R.id.system_icon_area);
         mClockController = mStatusBar.getClockController();
+        mBatteryBars[0] = mStatusBar.findViewById(R.id.battery_bar);
+        mBatteryBars[1] = mStatusBar.findViewById(R.id.battery_bar_1);
         mOngoingCallChip = mStatusBar.findViewById(R.id.ongoing_call_chip);
 
         mCenterClock = mStatusBar.findViewById(R.id.clock_center);
@@ -538,6 +544,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
 
     private void hideSystemIconArea(boolean animate) {
         animateHide(mSystemIconArea, animate);
+        for (View batteryBar: mBatteryBars) {
+            animateHide(batteryBar, animate);
+        }
     }
 
     private void showSystemIconArea(boolean animate) {
@@ -545,6 +554,9 @@ public class CollapsedStatusBarFragment extends Fragment implements CommandQueue
         int state = mAnimationScheduler.getAnimationState();
         if (state == IDLE || state == SHOWING_PERSISTENT_DOT) {
             animateShow(mSystemIconArea, animate);
+            for (View batteryBar: mBatteryBars) {
+                 animateShow(batteryBar, animate);
+			}
         } else {
             // We are in the middle of a system status event animation, which will animate the
             // alpha (but not the visibility). Allow the view to become visible again
