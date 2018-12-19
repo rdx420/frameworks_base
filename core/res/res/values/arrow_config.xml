@@ -29,6 +29,9 @@
     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveBatteryLed">false</bool>
     
+    <!-- Allow devices override audio panel location to the left side -->
+  <bool name="config_audioPanelOnLeftSide">true</bool>
+    
     <!-- Global Actions prefs list -->
     <string-array translatable="false" name="custom_config_globalActionsList">
         <item>emergency</item>

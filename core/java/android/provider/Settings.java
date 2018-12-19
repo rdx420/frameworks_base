@@ -5595,6 +5595,12 @@ public final class Settings {
          * @hide
          */
         public static final String DOUBLE_TAP_SLEEP_GESTURE = "double_tap_sleep_gesture";
+        
+        /**
+         * Volume panel on left
+         * @hide
+         */
+        public static final String VOLUME_PANEL_ON_LEFT = "volume_panel_on_left";
 
         /**
          * Wheter to show network traffic indicator in statusbar
