@@ -178,4 +178,7 @@
     
     <!-- Wired/BT headset focus mode -->
     <bool name="config_deviceRingtoneFocusMode">false</bool>
+    
+    <!-- Smart charging battery percentage -->
+    <integer name="config_smartChargingBatteryLevel">80</integer>
 </resources>
