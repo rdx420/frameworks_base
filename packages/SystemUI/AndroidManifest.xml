@@ -334,6 +334,10 @@
     <protected-broadcast android:name="com.android.settings.flashlight.action.FLASHLIGHT_CHANGED" />
 
     <!-- QS tiles -->
+    <!-- DataSwitch tile -->
+    <uses-permission android:name="android.permission.WRITE_APN_SETTINGS" />
+
+    <!-- Sync tile -->
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.MAINLINE_NETWORK_STACK" />

@@ -28,6 +28,7 @@ import com.android.systemui.plugins.qs.QSTile;
 import com.android.systemui.plugins.qs.QSTileView;
 import com.android.systemui.qs.QSHost;
 import com.android.systemui.qs.external.CustomTile;
+import com.android.systemui.qs.tiles.AODTile;
 import com.android.systemui.qs.tiles.AirplaneModeTile;
 import com.android.systemui.qs.tiles.AlarmTile;
 import com.android.systemui.qs.tiles.AmbientDisplayTile;
@@ -42,6 +43,7 @@ import com.android.systemui.qs.tiles.ColorCorrectionTile;
 import com.android.systemui.qs.tiles.CPUInfoTile;
 import com.android.systemui.qs.tiles.ColorInversionTile;
 import com.android.systemui.qs.tiles.DataSaverTile;
+import com.android.systemui.qs.tiles.DataSwitchTile;
 import com.android.systemui.qs.tiles.DeviceControlsTile;
 import com.android.systemui.qs.tiles.DndTile;
 import com.android.systemui.qs.tiles.FlashlightTile;
@@ -117,6 +119,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<CPUInfoTile> mCPUInfoTileProvider;
     private final Provider<SmartPixelsTile> mSmartPixelsTileProvider;
     private final Provider<SoundSearchTile> mSoundSearchTileProvider;
+    private final Provider<DataSwitchTile> mDataSwitchTileProvider;
 
     private final Lazy<QSHost> mQsHostLazy;
     private final Provider<CustomTile.Builder> mCustomTileBuilderProvider;
@@ -162,8 +165,9 @@ public class QSFactoryImpl implements QSFactory {
             Provider<UsbTetherTile> usbTetherTileProvider,
             Provider<VpnTile> vpnTileProvider,
             Provider<CPUInfoTile> cpuInfoTileProvider) {
-            Provider<SmartPixelsTile> smartPixelsTileProvider) {
-            Provider<SoundSearchTile> soundSearchTileProvider) {
+            Provider<SmartPixelsTile> smartPixelsTileProvider,
+            Provider<SoundSearchTile> soundSearchTileProvider,
+            Provider<DataSwitchTile> dataSwitchTileProvider){
         mQsHostLazy = qsHostLazy;
         mCustomTileBuilderProvider = customTileBuilderProvider;
 
@@ -206,6 +210,7 @@ public class QSFactoryImpl implements QSFactory {
         mCPUInfoTileProvider = cpuInfoTileProvider;
         mSmartPixelsTileProvider = smartPixelsTileProvider;
         mSoundSearchTileProvider = soundSearchTileProvider;
+        mDataSwitchTileProvider = dataSwitchTileProvider;
     }
 
     /** Creates a tile with a type based on {@code tileSpec} */
@@ -300,6 +305,8 @@ public class QSFactoryImpl implements QSFactory {
                 return mSmartPixelsTileProvider.get();
             case "soundsearch":
                 return mSoundSearchTileProvider.get();
+            case "dataswitch":
+                return mDataSwitchTileProvider.get();
         }
 
         // Custom tiles
