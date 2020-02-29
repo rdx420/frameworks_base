@@ -7441,5 +7441,8 @@ message MetricsEvent {
     // ARROW Metrics
     ARROW = 2772;
     CATALYST_QS_TILES = 2001;
+
+    // Panel for Mobile Data
+    PANEL_MOBILE_DATA = 4002;
   }
 }
