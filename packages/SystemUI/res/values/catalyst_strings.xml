@@ -60,10 +60,11 @@
 
     <!-- DataSwitch Tile -->
     <string name="qs_data_switch_label">Switch data card</string>
-    <string name="qs_data_switch_toast_0">Currently no SIM card is inserted</string>
-    <string name="qs_data_switch_toast_1">Currently only one SIM card is inserted</string>
     <string name="qs_data_switch_changed_1">Switch data card to SIM 1.</string>
     <string name="qs_data_switch_changed_2">Switch data card to SIM 2.</string>
+    <string name="qs_data_no_sim">No SIM</string>
+    <string name="qs_data_sim_1">SIM 1</string>
+    <string name="qs_data_sim_2">SIM 2</string>
     
     <!-- Bluetooth dialog -->
     <string name="turn_on_bluetooth">Use Bluetooth</string>
@@ -103,6 +104,4 @@
     <string name="force_stop_dlg_title">Force stop?</string>
     <string name="force_stop_dlg_text">If you force stop an app, it may misbehave.</string>
     
-    <string name="qs_data_sim_1">SIM 1</string>
-    <string name="qs_data_sim_2">SIM 2</string>
 </resources>
