@@ -22,7 +22,7 @@ LOCAL_NOTICE_FILE := $(LOCAL_PATH)/../../NOTICE
 LOCAL_REQUIRED_MODULES := \
 	DisplayCutoutEmulationCornerOverlay \
 	DisplayCutoutEmulationDoubleOverlay \
-    DisplayCutoutEmulationHoleOverlay \
+        DisplayCutoutEmulationHoleOverlay \
 	DisplayCutoutEmulationTallOverlay \
 	DisplayCutoutEmulationWaterfallOverlay \
 	FontNotoSerifSourceOverlay \
@@ -65,17 +65,32 @@ LOCAL_REQUIRED_MODULES := \
 	IconPackRoundedSettingsOverlay \
 	IconPackRoundedSystemUIOverlay \
 	IconPackRoundedThemePickerOverlay \
-    IconPackOOSAndroidOverlay \
-    IconPackOOSLauncherOverlay \
-    IconPackOOSSettingsOverlay \
-    IconPackOOSSystemUIOverlay \
-    IconPackOOSThemePickerOverlay \
-    IconPackAcherusAndroidOverlay \
-    IconPackAcherusSettingsOverlay \
-    IconPackAcherusSystemUIOverlay \
-    IconPackOutlineAndroidOverlay \
-    IconPackOutlineSettingsOverlay \
-    IconPackOutlineSystemUIOverlay \
+        IconPackOOSAndroidOverlay \
+        IconPackOOSLauncherOverlay \
+        IconPackOOSSettingsOverlay \
+        IconPackOOSSystemUIOverlay \
+        IconPackOOSThemePickerOverlay \
+        IconPackAcherusAndroidOverlay \
+        IconPackAcherusSettingsOverlay \
+        IconPackAcherusSystemUIOverlay \
+        IconShapeCloudyOverlay \
+    	IconShapeCylinderOverlay \
+    	IconShapeFlowerOverlay \
+    	IconShapeHeartOverlay \
+    	IconShapeHexagonOverlay \
+    	IconShapeLeafOverlay \
+    	IconShapePebbleOverlay \
+    	IconShapeRoundedHexagonOverlay \
+    	IconShapeRoundedRectOverlay \
+    	IconShapeSquareOverlay \
+    	IconShapeSquircleOverlay \
+    	IconShapeStretchedOverlay \
+    	IconShapeTaperedRectOverlay \
+    	IconShapeTeardropOverlay \
+    	IconShapeVesselOverlay \
+    	IconPackOutlineAndroidOverlay \
+    	IconPackOutlineSettingsOverlay \
+    	IconPackOutlineSystemUIOverlay \
 	IconPackXperiaAndroidOverlay \
 	IconPackXperiaSettingsOverlay \
 	IconPackXperiaSystemUIOverlay \
