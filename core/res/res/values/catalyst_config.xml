@@ -175,4 +175,7 @@
     <string name="config_batterymeterRLandBoltPathStyleB" translatable="false">@string/config_batterymeterLandBoltPathStyleB</string>
     <string name="config_batterymeterRLandPowersavePathStyleB" translatable="false">@string/config_batterymeterRLandPerimeterPathStyleB</string>
     <string name="config_batterymeterRLandErrorPerimeterPathStyleB" translatable="false">@string/config_batterymeterRLandPerimeterPathStyleB</string>
+    
+    <!-- Wired/BT headset focus mode -->
+    <bool name="config_deviceRingtoneFocusMode">false</bool>
 </resources>
