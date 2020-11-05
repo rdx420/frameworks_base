@@ -5839,12 +5839,31 @@ public final class Settings {
          * @hide
          */
         public static final String RETICKER_STATUS = "reticker_status";
-
+        
         /**
          * reTicker Colored
          * @hide
          */
         public static final String RETICKER_COLORED = "reticker_colored";
+
+        /**
+         * @hide
+         * Whether to enable PULSE Edge lights
+         * @hide
+         */
+        public static final String AMBIENT_NOTIFICATION_LIGHT = "ambient_notification_light";
+
+        /**
+         * @hide
+         */
+        public static final String AMBIENT_NOTIFICATION_LIGHT_AUTOMATIC = "ambient_notification_light_automatic";
+
+        /**
+         * helper setting to contain the current pulse reason so we can check
+         * if it has been triggered from a notification or a gesture
+         * @hide
+         */
+        public static final String PULSE_TRIGGER_REASON = "pulse_trigger_reason"; 
 
         /**
          * Hide Statusbar on LockScreen
@@ -6167,6 +6186,8 @@ public final class Settings {
             PRIVATE_SETTINGS.add(BACK_GESTURE_HAPTIC);
             PRIVATE_SETTINGS.add(STATUSBAR_CLOCK_CHIP);
             PRIVATE_SETTINGS.add(BATTERY_LEVEL_COLORS);
+            PRIVATE_SETTINGS.add(AMBIENT_NOTIFICATION_LIGHT);
+            PRIVATE_SETTINGS.add(AMBIENT_NOTIFICATION_LIGHT_AUTOMATIC);
         }
 
         /**
