@@ -139,8 +139,8 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
     private static final int DOZE_ANIMATION_ELEMENT_DURATION = 250;
 
     // TODO(b/179494051): May no longer be needed
-    private final boolean mShowLeftAffordance;
-    private final boolean mShowCameraAffordance;
+    private final boolean mShowLeftAffordance = true;
+    private final boolean mShowCameraAffordance = true;
 
     private KeyguardAffordanceView mRightAffordanceView;
     private KeyguardAffordanceView mLeftAffordanceView;
@@ -240,9 +240,10 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
     public KeyguardBottomAreaView(Context context, AttributeSet attrs, int defStyleAttr,
             int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        mShowLeftAffordance = getResources().getBoolean(R.bool.config_keyguardShowLeftAffordance);
-        mShowCameraAffordance = getResources()
-                .getBoolean(R.bool.config_keyguardShowCameraAffordance);
+        // we ignore both of those cause we allow config of shortcuts
+        //mShowLeftAffordance = getResources().getBoolean(R.bool.config_keyguardShowLeftAffordance);
+        //mShowCameraAffordance = getResources()
+        //        .getBoolean(R.bool.config_keyguardShowCameraAffordance);
     }
 
     private AccessibilityDelegate mAccessibilityDelegate = new AccessibilityDelegate() {
@@ -471,8 +472,13 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
     private void updateRightAffordanceIcon() {
         IconState state = mRightButton.getIcon();
         mRightAffordanceView.setVisibility(!mDozing && state.isVisible ? View.VISIBLE : View.GONE);
-        if (state.isVisible && state.drawable != null) {
-            mRightAffordanceView.setImageDrawable(state.drawable, state.tint, state.isDefaultButton ? false : true);
+        if (state.isVisible) {
+            if (state.drawable != mRightAffordanceView.getDrawable()
+                    || state.tint != mRightAffordanceView.shouldTint()
+                    || !state.isDefaultButton) {
+                mRightAffordanceView.setImageDrawable(state.drawable, state.tint,
+                    state.isDefaultButton ? false : true);
+            }
             mRightAffordanceView.setContentDescription(state.contentDescription);
         }
     }
@@ -505,6 +511,10 @@ public class KeyguardBottomAreaView extends FrameLayout implements View.OnClickL
      * Resolves the intent to launch the camera application.
      */
     public ResolveInfo resolveCameraIntent(int source) {
+        final Intent intent = getDefaultCameraIntent();
+        if (intent == null) {
+            return null;
+        }
         return mContext.getPackageManager().resolveActivityAsUser(
                 source == StatusBarManager.CAMERA_LAUNCH_SOURCE_POWER_DOUBLE_TAP
                 ? getDefaultCameraIntent() : getRightIntent(),
