@@ -94,5 +94,6 @@ public class SystemSettings {
         Settings.System.SENSOR_BLOCK,
         Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
         Settings.System.USE_OLD_MOBILETYPE,
+        Settings.System.BATTERY_LEVEL_COLORS,
     };
 }
