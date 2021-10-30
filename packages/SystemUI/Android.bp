@@ -123,6 +123,8 @@ android_library {
         "jsr330",
         "lottie",
         "bcsmartspace-google",
+        "colorkt",
+        "themelib",
     ],
     manifest: "AndroidManifest.xml",
 
