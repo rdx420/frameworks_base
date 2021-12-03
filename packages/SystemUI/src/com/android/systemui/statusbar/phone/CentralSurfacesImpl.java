@@ -728,6 +728,7 @@ public class CentralSurfacesImpl extends CoreStartable implements
 
     private final InteractionJankMonitor mJankMonitor;
     private final BurnInProtectionController mBurnInProtectionController;
+    private final SysUiState mSysUiState;
 
     /**
      * Public constructor for CentralSurfaces.
@@ -831,7 +832,8 @@ public class CentralSurfacesImpl extends CoreStartable implements
             WiredChargingRippleController wiredChargingRippleController,
             IDreamManager dreamManager,
             BurnInProtectionController burnInProtectionController,
-            TunerService tunerService) {
+            TunerService tunerService,
+            SysUiState sysUiState) {
         super(context);
         mNotificationsController = notificationsController;
         mFragmentService = fragmentService;
@@ -916,6 +918,7 @@ public class CentralSurfacesImpl extends CoreStartable implements
         mDreamOverlayStateController = dreamOverlayStateController;
         mTunerService = tunerService;
         mPulseController = new PulseControllerImpl(mContext, this, mCommandQueue, mUiBgExecutor);
+        mSysUiState = sysUiState;
 
         mLockscreenShadeTransitionController = lockscreenShadeTransitionController;
         mStartingSurfaceOptional = startingSurfaceOptional;
@@ -4331,6 +4334,17 @@ public class CentralSurfacesImpl extends CoreStartable implements
 
     protected void dismissKeyboardShortcuts() {
         KeyboardShortcuts.dismiss();
+    }
+
+    @Override
+    public void setBlockedGesturalNavigation(boolean blocked) {
+        if (getNotificationPanelViewController() != null) {
+            getNotificationPanelViewController().setBlockedGesturalNavigation(blocked);
+            getNotificationPanelViewController().updateSystemUiStateFlags();
+        }
+        if (getNavigationBarView() != null) {
+            getNavigationBarView().setBlockedGesturalNavigation(blocked, mSysUiState);
+        }
     }
 
     /**
