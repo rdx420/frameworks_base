@@ -10,6 +10,8 @@ import android.os.Trace;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.provider.Settings;
+import android.os.UserHandle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
@@ -488,7 +490,9 @@ public class NotificationIconAreaController implements
         if (colorize) {
             color = DarkIconDispatcher.getTint(mTintAreas, v, tint);
         }
-        if (v.getStatusBarIcon().pkg.contains("systemui")) {
+        boolean newIconStyle = Settings.System.getIntForUser(mContext.getContentResolver(),
+            Settings.System.STATUSBAR_COLORED_ICONS, 0, UserHandle.USER_CURRENT) == 1;
+        if (v.getStatusBarIcon().pkg.contains("systemui") || !newIconStyle) {
             v.setStaticDrawableColor(color);
             v.setDecorColor(tint);
         } else {
