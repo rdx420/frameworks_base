@@ -11532,6 +11532,13 @@ public final class Settings {
         public static final String PULSE_VERTICAL_MIRROR = "pulse_vertical_mirror";
 
         /**
+         * Whether to show QS auto brightness toggle button
+         * @hide
+         */
+        @Readable
+        public static final String QSTILE_REQUIRES_UNLOCKING = "qstile_requires_unlocking";
+
+        /**
          * Keys we no longer back up under the current schema, but want to continue to
          * process when restoring historical backup datasets.
          *

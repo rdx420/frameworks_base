@@ -208,5 +208,6 @@ public class SecureSettings {
         Settings.Secure.TETHERING_ALLOW_VPN_UPSTREAMS,
         Settings.Secure.GESTURE_NAVBAR_LENGTH_MODE,
         Settings.Secure.QUICK_SETTINGS_TILES_VIBRATE,
+        Settings.Secure.QSTILE_REQUIRES_UNLOCKING,
     };
 }
