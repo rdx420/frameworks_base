@@ -93,5 +93,6 @@ public class SystemSettings {
         Settings.System.NETWORK_TRAFFIC_AUTOHIDE_THRESHOLD,
         Settings.System.SENSOR_BLOCK,
         Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
+        Settings.System.USE_OLD_MOBILETYPE,
     };
 }
