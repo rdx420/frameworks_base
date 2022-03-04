@@ -6072,6 +6072,13 @@ public final class Settings {
         @Readable
         public static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
         
+         /**
+         * Heads up notifications threshold
+         * Default 0
+         * @hide
+         */
+        public static final String HEADS_UP_NOTIFICATIONS_THRESHOLD = "heads_up_notifications_threshold";
+        
         /**
          * Whether to answer the call with the volume keys, the value is boolean.
          * 0 = 0ff, 1 = on
