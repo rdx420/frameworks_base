@@ -94,7 +94,7 @@ public class AmbientDisplayConfiguration {
 
     /** @hide */
     public boolean pickupGestureEnabled(int user) {
-        return boolSettingDefaultOn(Settings.Secure.DOZE_PICK_UP_GESTURE, user)
+        return boolSettingDefaultOff(Settings.Secure.DOZE_PICK_UP_GESTURE, user)
                 && dozePickupSensorAvailable();
     }
 
