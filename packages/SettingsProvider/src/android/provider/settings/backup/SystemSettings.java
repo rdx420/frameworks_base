@@ -97,5 +97,7 @@ public class SystemSettings {
         Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
         Settings.System.USE_OLD_MOBILETYPE,
         Settings.System.BATTERY_LEVEL_COLORS,
+        Settings.System.QS_TILE_LABEL_HIDE,
+        Settings.System.QS_TILE_VERTICAL_LAYOUT,
     };
 }
