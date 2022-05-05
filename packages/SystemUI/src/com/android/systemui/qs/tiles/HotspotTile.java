@@ -49,7 +49,6 @@ import javax.inject.Inject;
 
 /** Quick settings tile: Hotspot **/
 public class HotspotTile extends SecureQSTile<BooleanState> {
-    private final Icon mEnabledStatic = ResourceIcon.get(R.drawable.ic_hotspot);
 
     private final HotspotController mHotspotController;
     private final DataSaverController mDataSaverController;
@@ -132,9 +131,6 @@ public class HotspotTile extends SecureQSTile<BooleanState> {
     @Override
     protected void handleUpdateState(BooleanState state, Object arg) {
         final boolean transientEnabling = arg == ARG_SHOW_TRANSIENT_ENABLING;
-        if (state.slash == null) {
-            state.slash = new SlashState();
-        }
 
         final int numConnectedDevices;
         final boolean isTransient = transientEnabling || mHotspotController.isHotspotTransient();
@@ -153,13 +149,14 @@ public class HotspotTile extends SecureQSTile<BooleanState> {
             isDataSaverEnabled = mDataSaverController.isDataSaverEnabled();
         }
 
-        state.icon = mEnabledStatic;
         state.label = mContext.getString(R.string.quick_settings_hotspot_label);
         state.isTransient = isTransient;
-        state.slash.isSlashed = !state.value && !state.isTransient;
         if (state.isTransient) {
             state.icon = ResourceIcon.get(
-                    com.android.internal.R.drawable.ic_hotspot_transient_animation);
+                    R.drawable.qs_hotspot_icon_search);
+        } else {
+            state.icon = ResourceIcon.get(state.value
+                    ? R.drawable.qs_hotspot_icon_on : R.drawable.qs_hotspot_icon_off);
         }
         state.expandedAccessibilityClassName = Switch.class.getName();
         state.contentDescription = state.label;
