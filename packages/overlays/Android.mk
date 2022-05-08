@@ -87,6 +87,7 @@ LOCAL_REQUIRED_MODULES := \
     	IconShapeTaperedRectOverlay \
     	IconShapeTeardropOverlay \
     	IconShapeVesselOverlay \
+    	RohieIconMeowOverlay \
     	IconPackOutlineAndroidOverlay \
     	IconPackOutlineSettingsOverlay \
     	IconPackOutlineSystemUIOverlay \
