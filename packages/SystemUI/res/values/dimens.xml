@@ -1464,4 +1464,7 @@
     <dimen name="media_output_broadcast_info_title_height">24dp</dimen>
     <dimen name="media_output_broadcast_info_summary_height">20dp</dimen>
     <dimen name="media_output_broadcast_info_edit">18dp</dimen>
+
+    <!-- Network traffic -->
+    <dimen name="network_traffic_width">25sp</dimen>
 </resources>
