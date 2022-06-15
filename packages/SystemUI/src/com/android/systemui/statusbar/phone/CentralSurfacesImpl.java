@@ -279,6 +279,9 @@ public class CentralSurfacesImpl extends CoreStartable implements
         TunerService.Tunable,
         CentralSurfaces {
 
+    private static final String QS_TRANSPARENCY =
+            "system:" + Settings.System.QS_TRANSPARENCY;
+
     private static final String BANNER_ACTION_CANCEL =
             "com.android.systemui.statusbar.banner_action_cancel";
     private static final String BANNER_ACTION_SETUP =
@@ -946,6 +949,7 @@ public class CentralSurfacesImpl extends CoreStartable implements
                 SysuiStatusBarStateController.RANK_STATUS_BAR);
 
         mTunerService.addTunable(this, STATUS_BAR_BRIGHTNESS_CONTROL);
+        mTunerService.addTunable(this, QS_TRANSPARENCY);
 
         mWindowManager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
 
@@ -4421,6 +4425,10 @@ public class CentralSurfacesImpl extends CoreStartable implements
             case STATUS_BAR_BRIGHTNESS_CONTROL:
                 mBrightnessControl =
                         TunerService.parseIntegerSwitch(newValue, false);
+                break;
+            case QS_TRANSPARENCY:
+                mScrimController.setCustomScrimAlpha(
+                        TunerService.parseInteger(newValue, 100));
                 break;
             default:
                 break;
