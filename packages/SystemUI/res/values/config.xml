@@ -717,4 +717,7 @@
         <item>com.android.keyguard</item>
         <item>com.android.systemui</item>
     </string-array>
+
+    <integer name="config_aodMaxRefreshRate">-1</integer>
+
 </resources>
