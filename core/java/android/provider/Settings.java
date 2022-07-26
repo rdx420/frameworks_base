@@ -5930,6 +5930,11 @@ public final class Settings {
          * @hide
          */
         public static final String STATUSBAR_CLOCK_CHIP ="statusbar_clock_chip";
+        
+        /**
+         * @hide
+         */
+        public static final String SECONDARY_COLOR_CLOCK = "use_secondary_color_clock";
 
         /**
          * Whether to show the battery bar
