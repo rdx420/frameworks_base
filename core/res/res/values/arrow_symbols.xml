@@ -56,4 +56,7 @@
   <java-symbol type="string" name="sleep_mode_notification_content" />
   <java-symbol type="string" name="sleep_mode_enabled_toast" />
   <java-symbol type="string" name="sleep_mode_disabled_toast" />
+  
+  <!-- Location indicator -->
+    <java-symbol type="drawable" name="stat_sys_location" />
 </resources>
