@@ -169,16 +169,16 @@ class AuthRippleController @Inject constructor(
     }
 
     override fun onKeyguardFadingAwayChanged() {
+        val lightRevealScrim = centralSurfaces.lightRevealScrim
         if (!isRippleEnabled) {
             // reset and hide the scrim so it doesn't appears on
             // the next notification shade usage
-            statusBar.lightRevealScrim?.revealAmount = 1f
+            lightRevealScrim?.revealAmount = 1f
             startLightRevealScrimOnKeyguardFadingAway = false
             return
         }
 
         if (keyguardStateController.isKeyguardFadingAway) {
-            val lightRevealScrim = centralSurfaces.lightRevealScrim
             if (startLightRevealScrimOnKeyguardFadingAway && lightRevealScrim != null) {
                 lightRevealScrimAnimator?.cancel()
                 lightRevealScrimAnimator = ValueAnimator.ofFloat(.1f, 1f).apply {
