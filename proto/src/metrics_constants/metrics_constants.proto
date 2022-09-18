@@ -7440,11 +7440,5 @@ message MetricsEvent {
 
     // ARROW Metrics
     ARROW = 2772;
-
-    // Panel for Bluetooth
-    PANEL_BLUETOOTH = 4001;
-
-    // Panel for Mobile Data
-    PANEL_MOBILE_DATA = 4002;
   }
 }
