@@ -5573,6 +5573,9 @@ public final class Settings {
         /** @hide */
         public static final String BACK_GESTURE_HEIGHT = "back_gesture_height";
 
+        /** @hide */
+        public static final String BERRY_BLACK_THEME = "berry_black_theme";
+
         /**
          * IMPORTANT: If you add a new public settings you also have to add it to
          * PUBLIC_SETTINGS below. If the new setting is hidden you have to add

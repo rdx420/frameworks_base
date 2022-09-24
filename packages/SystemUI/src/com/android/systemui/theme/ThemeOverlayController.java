@@ -78,8 +78,6 @@ import com.android.systemui.statusbar.policy.DeviceProvisionedController.DeviceP
 import com.android.systemui.util.settings.SecureSettings;
 import com.android.systemui.util.settings.SystemSettings;
 
-import lineageos.providers.LineageSettings;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -431,7 +429,7 @@ public class ThemeOverlayController extends CoreStartable implements Dumpable {
                 UserHandle.USER_ALL);
 
         mSystemSettings.registerContentObserverForUser(
-                LineageSettings.System.getUriFor(LineageSettings.System.BERRY_BLACK_THEME),
+                Settings.System.getUriFor(Settings.System.BERRY_BLACK_THEME),
                 false,
                 new ContentObserver(mBgHandler) {
                     @Override
@@ -669,8 +667,8 @@ public class ThemeOverlayController extends CoreStartable implements Dumpable {
             categoryToPackage.put(OVERLAY_CATEGORY_ACCENT_COLOR, mSecondaryOverlay.getIdentifier());
         }
 
-        boolean isBlackMode = (LineageSettings.System.getIntForUser(
-                mContext.getContentResolver(), LineageSettings.System.BERRY_BLACK_THEME,
+        boolean isBlackMode = (Settings.System.getIntForUser(
+                mContext.getContentResolver(), Settings.System.BERRY_BLACK_THEME,
                 0, currentUser) == 1) && isNightMode();
         if (categoryToPackage.containsKey(OVERLAY_CATEGORY_SYSTEM_PALETTE) && isBlackMode) {
             OverlayIdentifier blackTheme = new OverlayIdentifier(OVERLAY_BERRY_BLACK_THEME);
