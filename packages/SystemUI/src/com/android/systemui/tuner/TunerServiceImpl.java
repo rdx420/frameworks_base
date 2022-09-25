@@ -145,6 +145,7 @@ public class TunerServiceImpl extends TunerService {
 
                 iconHideList.add("rotate");
                 iconHideList.add("headset");
+                iconHideList.add("ims");
 
                 Settings.Secure.putStringForUser(mContentResolver,
                         StatusBarIconController.ICON_HIDE_LIST,
