@@ -4444,6 +4444,13 @@ public final class Settings {
                 "lockscreen_quick_unlock_control";
 
         /**
+         * Whether to use the statusbar burn in protection
+         * @hide
+         */
+        public static final String STATUSBAR_BURN_IN_PROTECTION =
+                "statusbar_burn_in_protection";
+
+        /**
          * Sensor block per-package
          * @hide
          */
