@@ -11798,6 +11798,13 @@ public final class Settings {
          * @hide
          */
         public static final String STATUS_BAR_BATTERY_STYLE = "status_bar_battery_style";
+        
+        /**
+         *  Toggle the media squiggle animation
+         *  0 = 0ff, 1 = on
+         * @hide
+         */
+        public static final String SHOW_MEDIA_SQUIGGLE_ANIMATION = "show_media_squiggle_animation";
 
         /**
          * These entries are considered common between the personal and the managed profile,
