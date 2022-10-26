@@ -166,19 +166,14 @@ public class RecordingService extends Service implements MediaRecorder.OnInfoLis
                 mLowQuality = intent.getBooleanExtra(EXTRA_LOW_QUALITY, false);
                 mLongerDuration = intent.getBooleanExtra(EXTRA_LONGER_DURATION, false);
 
-                mOriginalShowTaps = Settings.System.getInt(
-                        getApplicationContext().getContentResolver(),
-                        Settings.System.SHOW_TOUCHES, 0) != 0;
-
-                setTapsVisible(mShowTaps);
-                setStopDotVisible(mShowStopDot);
-
                 mRecorder = new ScreenMediaRecorder(
                         mUserContextTracker.getUserContext(),
                         currentUserId,
                         mAudioSource,
                         this
                 );
+                setTapsVisible(mShowTaps);
+                setStopDotVisible(mShowStopDot);
                 setLowQuality(mLowQuality);
                 setLongerDuration(mLongerDuration);
 
@@ -459,7 +454,7 @@ public class RecordingService extends Service implements MediaRecorder.OnInfoLis
     }
 
     private void stopRecording(int userId) {
-        setTapsVisible(mOriginalShowTaps);
+        setTapsVisible(false);
         setStopDotVisible(false);
         if (getRecorder() != null) {
             getRecorder().end();
