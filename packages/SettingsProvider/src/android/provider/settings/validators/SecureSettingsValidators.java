@@ -341,5 +341,6 @@ public class SecureSettingsValidators {
         VALIDATORS.put(Secure.TETHERING_ALLOW_VPN_UPSTREAMS, BOOLEAN_VALIDATOR);
         VALIDATORS.put(Secure.GESTURE_NAVBAR_LENGTH_MODE, new InclusiveIntegerRangeValidator(0, 2));
         VALIDATORS.put(Secure.QUICK_SETTINGS_TILES_VIBRATE, BOOLEAN_VALIDATOR);
+        VALIDATORS.put(Secure.LOCKSCREEN_MEDIA_METADATA, BOOLEAN_VALIDATOR);
     }
 }
