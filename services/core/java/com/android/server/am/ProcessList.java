@@ -2464,6 +2464,11 @@ public final class ProcessList {
             }
         }
 
+        if (!info.baseCodePathExists()) {
+            Slog.w(TAG, "APK " + info.getBaseCodePath() + " does not exist for " + processName);
+            return null;
+        }
+
         if (app == null) {
             checkSlow(startTime, "startProcess: creating new process record");
             app = newProcessRecordLocked(info, processName, isolated, isolatedUid, isSdkSandbox,
