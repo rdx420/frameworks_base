@@ -102,4 +102,7 @@
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Force stop?</string>
     <string name="force_stop_dlg_text">If you force stop an app, it may misbehave.</string>
+    
+    <string name="qs_data_sim_1">SIM 1</string>
+    <string name="qs_data_sim_2">SIM 2</string>
 </resources>
