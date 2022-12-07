@@ -134,28 +134,28 @@ public class CatalystUtils {
         }
     }
     
-    // Show Restart Prompt
-    public static void showSettingsRestartDialog(Context context) {
+    // Restart UI prompt
+    public static void restartSystemUi(Context context) {
+        new RestartSystemUiTask(context).execute();
+    }
+
+    public static void showSystemUiRestartDialog(Context context) {
         new AlertDialog.Builder(context)
-                .setTitle(R.string.settings_restart_title)
-                .setMessage(R.string.settings_restart_message)
+                .setTitle(R.string.systemui_restart_title)
+                .setMessage(R.string.systemui_restart_message)
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        restartSettings(context);
+                        restartSystemUi(context);
                     }
                 })
                 .setNegativeButton(R.string.cancel, null)
                 .show();
     }
 
-    public static void restartSettings(Context context) {
-        new restartSettingsTask(context).execute();
-    }
-
-    private static class restartSettingsTask extends AsyncTask<Void, Void, Void> {
+    private static class RestartSystemUiTask extends AsyncTask<Void, Void, Void> {
         private Context mContext;
 
-        public restartSettingsTask(Context context) {
+        public RestartSystemUiTask(Context context) {
             super();
             mContext = context;
         }
@@ -167,8 +167,8 @@ public class CatalystUtils {
                         (ActivityManager) mContext.getSystemService(Context.ACTIVITY_SERVICE);
                 IActivityManager ams = ActivityManager.getService();
                 for (ActivityManager.RunningAppProcessInfo app: am.getRunningAppProcesses()) {
-                    if ("com.android.settings".equals(app.processName)) {
-                    	ams.killApplicationProcess(app.processName, app.uid);
+                    if ("com.android.systemui".equals(app.processName)) {
+                        ams.killApplicationProcess(app.processName, app.uid);
                         break;
                     }
                 }

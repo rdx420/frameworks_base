@@ -67,7 +67,7 @@
     <!-- Horizon Light -->
   <java-symbol type="integer" name="config_AmbientPulseLightColor" />
   
-  <!-- Settings Restart -->
-   <java-symbol type="string" name="settings_restart_title" />
-   <java-symbol type="string" name="settings_restart_message" />
+  <!-- SystemUI Restart -->
+    <java-symbol type="string" name="systemui_restart_title" />
+    <java-symbol type="string" name="systemui_restart_message" />
 </resources>
