@@ -102,6 +102,12 @@
         android:icon="@drawable/ic_statusbar_data_saver"
         android:key="data_saver"
         android:title="@string/status_bar_data_saver" />
+        
+    <!--Call Strength-->
+    <com.android.systemui.tuner.StatusBarSwitch
+        android:icon="@drawable/ic_statusbar_call_strength"
+        android:key="call_strength"
+        android:title="@string/status_bar_call_strength" />
 
     <!--VPN-->
     <com.android.systemui.tuner.StatusBarSwitch
