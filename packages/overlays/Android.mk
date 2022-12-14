@@ -37,7 +37,6 @@ LOCAL_REQUIRED_MODULES := \
 	IconPackCircularThemePickerOverlay \
         IconPackPUIAndroidOverlay \
         IconPackPUILauncherOverlay \
-        IconPackPUISettingsOverlay \
         IconPackPUISystemUIOverlay \
         IconPackPUIThemePickerOverlay \
 	IconPackVictorAndroidOverlay \
