@@ -132,8 +132,8 @@ public class StatusBarIconControllerImpl extends StatusBarIconList implements Tu
     public void addIconGroup(IconManager group) {
         for (IconManager existingIconManager : mIconGroups) {
             if (existingIconManager.mGroup == group.mGroup) {
-                Log.e(TAG, "Adding new IconManager for the same ViewGroup. This could cause "
-                        + "unexpected results.");
+                // Remove existing icon group
+                removeIconGroup(existingIconManager);
             }
         }
 
