@@ -1607,7 +1607,7 @@ public class VibratorManagerService extends IVibratorManagerService.Stub {
                 setExternalControl(true);
             }
             if (DEBUG) {
-                Slog.e(TAG, "Playing external vibration: " + vib);
+                Slog.d(TAG, "Playing external vibration: " + vib);
             }
             return scale;
         }
@@ -1618,7 +1618,7 @@ public class VibratorManagerService extends IVibratorManagerService.Stub {
                 if (mCurrentExternalVibration != null
                         && mCurrentExternalVibration.externalVibration.equals(vib)) {
                     if (DEBUG) {
-                        Slog.e(TAG, "Stopping external vibration" + vib);
+                        Slog.d(TAG, "Stopping external vibration: " + vib);
                     }
                     endExternalVibrateLocked(Vibration.Status.FINISHED,
                             /* continueExternalControl= */ false);
