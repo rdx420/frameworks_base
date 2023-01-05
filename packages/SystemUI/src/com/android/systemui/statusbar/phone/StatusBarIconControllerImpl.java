@@ -130,12 +130,11 @@ public class StatusBarIconControllerImpl extends StatusBarIconList implements Tu
     /** */
     @Override
     public void addIconGroup(IconManager group) {
-        for (IconManager existingIconManager : mIconGroups) {
-            if (existingIconManager.mGroup == group.mGroup) {
-                // Remove existing icon group
-                removeIconGroup(existingIconManager);
-            }
-        }
+        // Remove existing icon group if present
+        mIconGroups.stream()
+                .filter(i -> i.mGroup == group.mGroup)
+                .findFirst()
+                .ifPresent(i -> removeIconGroup(i));
 
         group.setController(this);
         group.setMobileSignalStyle(mIsOldSignalStyle);
